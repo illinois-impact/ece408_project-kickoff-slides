@@ -74,9 +74,9 @@ Fast convolution layer forward pass in MxNet
 
 ## Tue 11/07/2017: Project Released
 ## Fri 11/10/2017: Milestone 1 "Due"
-## Fri 11/17/2017: Milestone 2 "Due"
-## Fri 12/1/2017: Milestone 3 "Due"
-## 12/15/2017: Final Submission
+## Fri 11/17/2017: Milestone 2 Due with draft report
+## Fri 12/1/2017: Milestone 3 Due with updated report
+## 12/15/2017: Final Submission with final report
 
 ---
 
@@ -104,14 +104,40 @@ Skeleton Code
 The client may be downloaded from here:
 [https://github.com/rai-project/rai](https://github.com/rai-project/rai)
 
+Download from the links in the README, not releases.
+
 You will need your `.rai_profile` file in your home directory.
+* `~/.rai_profile` on Linux/macOS
+* `%HOME%/.rai_profile` on Windows
+
 This should have been emailed to you.
 
 (demo)
 
---
+---
 
-`rai` uploads your folder to AWS.
+# Teams
+
+## Team of 3 People
+
+Modify `.rai_profile` with your team name under `team.name`:
+
+    profile:
+      firstname: Carl
+      lastname: Pearson
+      username: carlwpearson
+      email: carlwpearson@gmail.com
+      access_key: auth0|5a0130d32327ea70420b71ef
+      secret_key: <snip>
+      affiliation: uiuc
+      team:
+        name: staff
+
+---
+
+# Basic `rai`
+
+`rai -p <project folder>` uploads your folder to AWS.
 
 Your code in `rai_build.yml` is executed on AWS in a specific docker container.
 
@@ -122,7 +148,7 @@ The results are streamed back to you in *real time*.
 
 # Milestone 1 (Friday 11/10/2017)
 
-Nothing to turn in until final report.
+Nothing to turn in until Milestone 2
 
 * Not much work on your part!
 * Just making sure rai is working for you.
@@ -142,9 +168,23 @@ Nothing to turn in until final report.
 
 ---
 
+# Submitting
+
+
+`rai -p <project folder> --submit`
+    
+    * Enforces a particular rai_build.yml
+    * Records timing information
+    * You will need a `report.pdf`.
+
+This was designed for a final submission, so the Milestone submissions may fail to execute.
+That's okay, we just want to collect the report.
+
+---
+
 # Milestone 2 (Friday 11/17/2017)
 
-Nothing to turn in until final report.
+Turn in a draft of `report.pdf`
 
 ## Implement CPU forward pass
 
@@ -157,7 +197,7 @@ Should be pretty straightforward copy from slides / chapter 16
 
 # Milestone 3 (Friday 12/1/2017)
 
-Nothing to turn in until final report.
+Turn in an updated draft of `report.pdf`.
 
 ## Implement GPU forward pass
 
@@ -175,11 +215,8 @@ Small changes to milestone 2.
 
 Optimize that GPU convolution. 
 
-`rai -p <project folder> --submit`
+Turn in a final report.
 
-* Enforces a particular rai_build.yml
-* Records timing information
-* You will need a `report.pdf`.
 
 ---
 
@@ -208,6 +245,30 @@ See project page for up-to-date rubric.
 `rai rankings`
 
 Shows *anonymized* performance results for you and other teams.
+
+---
+
+# `rai` tips and tricks
+
+## `rai -p <project folder> version
+
+Prints the date `rai` was built
+
+Check piazza, if your `rai` is old, download a newer one
+
+## `rai -p <project folder> -d -v
+
+Debug / verbose mode. Prints a bit of additional info while running
+* the queue submitted to (should be `rai_amd64`)
+* what it thinks your username and team name is
+
+---
+
+# Notes on `batch_size`
+
+Don't modify the `batch_size` in the python script.
+
+You can loop over `B` in the C/CUDA code and split it up there however you want. 
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
