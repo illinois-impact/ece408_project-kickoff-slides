@@ -70,41 +70,49 @@ Fast convolution layer forward pass in MxNet
 ---
 
 
-# Timeline
+# Timeline (1/2)
 
-## Tue 11/07/2017: Project Released
-## Fri 11/10/2017: Milestone 1 "Due"
-## Fri 11/17/2017: Milestone 2 Due with draft report
-## Fri 12/1/2017: Milestone 3 Due with updated report
-## 12/15/2017: Final Submission with final report
+### Wed 3/07/2018: Milestone 1
+
+Make sure `rai` works for you
+
+### Wed 3/21/2018: Milestone 2
+
+CPU Implementation
+
+### Wed 4/18/2018: Milestone 3
+
+GPU implementation and performance preview
+
+---
+
+# Timeline (2/2)
+
+### Wed 5/02/2018: Milestone 4
+
+GPU optimizations
+
+### Fri 5/11/2018: Final Submission
 
 ---
 
 # Project Release
 
 ## Project Landing Page
-[https://github.com/webgpu/2017fa_ece408_project](https://github.com/webgpu/2017fa_ece408_project)
+[https://github.com/illinois-impact/ece408_project](https://github.com/illinois-impact/ece408_project)
 
-## Includes:
-
-Instructions
-
-RAI Client
-
-Final Project Rubric
-
-Other Guidelines
-
-Skeleton Code
+Includes 
+* Instructions
+* RAI Client
+* Final Project Rubric
+* Other Guidelines
+* Skeleton Code
 
 ---
 
 # rai Client
 
-The client may be downloaded from here:
-[https://github.com/rai-project/rai](https://github.com/rai-project/rai)
-
-Download from the links in the README, not releases.
+The client may be downloaded from the project readme
 
 You will need your `.rai_profile` file in your home directory.
 * `~/.rai_profile` on Linux/macOS
@@ -119,6 +127,8 @@ This should have been emailed to you.
 # Teams
 
 ## Team of 3 People
+
+Submit your team name to [this form](https://goo.gl/forms/Sz0fLOWscPP1hsS12)
 
 Modify `.rai_profile` with your team name under `team.name`:
 
@@ -146,12 +156,10 @@ The results are streamed back to you in *real time*.
 ---
 
 
-# Milestone 1 (Friday 11/10/2017)
+# Milestone 1 (Wed 3/07/2018 @ 5pm)
 
-Nothing to turn in until Milestone 2
-
-* Not much work on your part!
-* Just making sure rai is working for you.
+* Make sure rai is working for you
+* Choose your teams / team name
 
 ## Run MxNet baseline CPU code
 
@@ -162,7 +170,10 @@ Nothing to turn in until Milestone 2
 
 * Make sure MxNet GPU is working
 * Report execution time.
-* Use `nvprof` to make a profile
+
+## Show your stuff in `report.pdf`
+
+* please make this a pdf file
 
 (demo)
 
@@ -170,21 +181,21 @@ Nothing to turn in until Milestone 2
 
 # Submitting
 
-
-`rai -p <project folder> --submit`
+`rai -p <project folder> --submit=[m1,m2,m3,m4,final]`
     
     * Enforces a particular rai_build.yml
     * Records timing information
     * You will need a `report.pdf`.
 
-This was designed for a final submission, so the Milestone submissions may fail to execute.
-That's okay, we just want to collect the report.
+Your code should work correctly here, this is what matters.
+
+We'll look at the latest one before the deadline.
 
 ---
 
-# Milestone 2 (Friday 11/17/2017)
+# Milestone 2 (Wed 3/21/2018 @ 5pm)
 
-Turn in a draft of `report.pdf`
+Turn in an updated `report.pdf`
 
 ## Implement CPU forward pass
 
@@ -193,9 +204,13 @@ Turn in a draft of `report.pdf`
 
 Should be pretty straightforward copy from slides / chapter 16
 
+## Intro to `nvprof`
+
+* Use nvprof to collect some basic info
+
 ---
 
-# Milestone 3 (Friday 12/1/2017)
+# Milestone 3 (Wed 4/18/2017 @ 5pm)
 
 Turn in an updated draft of `report.pdf`.
 
@@ -207,9 +222,20 @@ Turn in an updated draft of `report.pdf`.
 Doesn't have to be fast, but it should work.
 Small changes to milestone 2.
 
+
 ---
 
-# Final Submission (Friday 12/15/2017)
+# Milestone 4 (Wed 5/2/2017)
+
+Updated `report.pdf`
+
+## Implement 3 GPU optimizations
+
+Use `nvprof` / NVVP to describe effect of optimizations
+
+---
+
+# Final Submission (Fri 5/11/2017)
 
 * The **real deal**.
 
@@ -220,22 +246,66 @@ Turn in a final report.
 
 ---
 
+# Rubric
+
+1. Milestone 1 ( 5% )
+2. Milestone 2 ( 10% )
+3. Milestone 3 ( 10% )
+    * Optimization 1
+4. Final Optimizations ( 60% )
+    * Optimization 2 ( 10% )
+    * Optimization 3 ( 10% )
+    * Optimization 4 ( 10% )
+    * Optimization 5 ( 10% )
+    * Optimization 6 ( 10% )
+    * Additional Optimizations / detailed insights ( 10% )
+5. Performance Ranking ( 10% )
+6. Report Style (10 %)
+    * Clear, concise writing, good layout, and good organization will be rewarded.
+
+---
+
+# Optimizations Rubric
+
+Each optimization will be graded as follows:
+
+    * Explanation of Performance Impact ( 40% )
+    * Correctness ( 60% )
+
+---
+
+# Ranking Rubric
+
+Each optimization will be graded as follows:
+
+1. The median performance will be determined (how well the class did as a whole)
+2. Your performance will be converted to a number of standard deviations above/below that median (how well you did compared to the class).
+3. That value will be linearly mapped into the space of 0-10 to determine the ranking grade.
+
+---
+
 # Final report
 
 See project page for up-to-date rubric.
 
 
-* Baseline Results
-    * M1.1: mxnet CPU layer performance results (time)
-    * M1.2: mxnet GPU layer performance results (time, nvprof profile)
-* M2.1: your baseline cpu implementation performance results (time)
-* M3.1: your baseline gpu implementation performance results (time, nvprof profile)
-* Optimization Approach and Results
+You've been building this final report through all the milestones. Keep the content from the earlier milestones, but be sure to include the following:
+
+* Your team name
+* Your team member names
+* Your netids
+* Your UINs
+
+For each optimization
+
+1. Optimization Approach and Results
     * how you identified the optimization opportunity
     * why you thought the approach would be fruitful
-    * the effect of the optimization. was it fruitful, and why or why not. Use nvprof as needed to justify your explanation.
+    * the effect of the optimization. was it fruitful, and why or why not. Use nvprof and NVVP to justify your explanation.
     * Any external references used during identification or development of the optimization
-* References (as needed)
+    * How your team organized and divided up this work.
+2. References (as needed)
+3. (Optional) Suggestions for Improving Next Year
 
 
 ---
