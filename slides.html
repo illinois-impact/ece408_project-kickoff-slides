@@ -56,8 +56,9 @@ template: title-layout
 
 # ECE408 / CS483 / CSE 408 Final Project Kickoff
 
-## Carl Pearson
-## `pearson@illinois.edu`
+## Vikram Sharma Mailthody/Zaid Qureshi 
+## `vsm2@illinois.edu`
+## `zaidq2@illinois.edu`
 
 ---
 
@@ -67,20 +68,37 @@ template: single-layout
 
 Fast convolution layer forward pass in MxNet
 
+
+You are required to implement optimized convolutional layer for a 2 layer convolution neural network. We will be classifying fashion mnist dataset for this project. 
+
+##Parameters that you must be aware of:
+
+Input channels   -  1
+
+Input size       -  72x72 
+
+Kernel size      -  7x7 
+
+Filters          -  different sizes. (your code should support it)
+
+
+
 ---
 
 
 # Timeline (1/2)
 
-### Wed 3/07/2018: Milestone 1
+Deadline is at 5PM for all milestones. 
+
+### Wed 10/24/2018: Milestone 1
 
 Make sure `rai` works for you
 
-### Wed 3/21/2018: Milestone 2
+### Wed 11/07/2018: Milestone 2
 
 CPU Implementation
 
-### Wed 4/18/2018: Milestone 3
+### Wed 11/16/2018: Milestone 3
 
 GPU implementation and performance preview
 
@@ -88,11 +106,11 @@ GPU implementation and performance preview
 
 # Timeline (2/2)
 
-### Wed 5/02/2018: Milestone 4
+### Sun 12/02/2018: Milestone 4
 
 GPU optimizations
 
-### Fri 5/11/2018: Final Submission
+### Fri 12/14/2018: Final Submission
 
 ---
 
@@ -128,15 +146,15 @@ This should have been emailed to you.
 
 ## Team of 3 People
 
-Submit your team name to [this form](https://goo.gl/forms/Sz0fLOWscPP1hsS12)
+Submit your team name to [this form](https://goo.gl/forms/NsjlmP4IIt1YKCf63)
 
 Modify `.rai_profile` with your team name under `team.name`:
 
     profile:
-      firstname: Carl
-      lastname: Pearson
-      username: carlwpearson
-      email: carlwpearson@gmail.com
+      firstname: Zaid
+      lastname: Qureshi
+      username: zaidq2
+      email: zaidq2@illinois.edu
       access_key: auth0|5a0130d32327ea70420b71ef
       secret_key: <snip>
       affiliation: uiuc
@@ -147,16 +165,16 @@ Modify `.rai_profile` with your team name under `team.name`:
 
 # Basic `rai`
 
-`rai -p <project folder>` uploads your folder to AWS.
+`rai -p <project folder>` --queue rai_amd64_ece408 uploads your folder to AWS/IMPACT Servers.
 
-Your code in `rai_build.yml` is executed on AWS in a specific docker container.
+Your code in `rai_build.yml` is executed on AWS (or IMPACT Servers) in a specific docker container.
 
 The results are streamed back to you in *real time*.
 
 ---
 
 
-# Milestone 1 (Wed 3/07/2018 @ 5pm)
+# Milestone 1 (Wed 10/24/2018 @ 5pm)
 
 * Make sure rai is working for you
 * Choose your teams / team name
@@ -181,7 +199,7 @@ The results are streamed back to you in *real time*.
 
 # Submitting
 
-`rai -p <project folder> --submit=[m1,m2,m3,m4,final]`
+`rai -p <project folder> --queue rai_amd64_ece408 --submit=[m1,m2,m3,m4,final]`
     
     * Enforces a particular rai_build.yml
     * Records timing information
@@ -193,7 +211,7 @@ We'll look at the latest one before the deadline.
 
 ---
 
-# Milestone 2 (Wed 3/21/2018 @ 5pm)
+# Milestone 2 (Wed 11/07/2018 @ 5pm)
 
 Turn in an updated `report.pdf`
 
@@ -210,7 +228,7 @@ Should be pretty straightforward copy from slides / chapter 16
 
 ---
 
-# Milestone 3 (Wed 4/18/2017 @ 5pm)
+# Milestone 3 (Wed 11/16/2018 @ 5pm)
 
 Turn in an updated draft of `report.pdf`.
 
@@ -225,7 +243,7 @@ Small changes to milestone 2.
 
 ---
 
-# Milestone 4 (Wed 5/2/2017)
+# Milestone 4 (Sun 12/2/2018)
 
 Updated `report.pdf`
 
@@ -235,7 +253,7 @@ Use `nvprof` / NVVP to describe effect of optimizations
 
 ---
 
-# Final Submission (Fri 5/11/2017)
+# Final Submission (Fri 12/14/2018)
 
 * The **real deal**.
 
@@ -326,7 +344,7 @@ Prints the date `rai` was built
 
 Check piazza, if your `rai` is old, download a newer one
 
-## `rai -p <project folder> -d -v
+## `rai -p <project folder> --queue rai_amd64_ece408 -d -v
 
 Debug / verbose mode. Prints a bit of additional info while running
 * the queue submitted to (should be `rai_amd64`)
